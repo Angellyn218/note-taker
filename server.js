@@ -1,6 +1,7 @@
 const express = require('express');
 const path = require('path'); 
 const fs = require('fs');
+const { v4: uuidv4 } = require('uuid');
 
 const PORT = process.env.PORT || 3001;
 const app = express();
@@ -33,7 +34,8 @@ app.post('/api/notes', (req, res) => {
 
     const newNote = {
         title, 
-        text
+        text,
+        id: uuidv4()
     };
 
     fs.readFile('./db/db.json', (err, data) => {
@@ -52,13 +54,6 @@ app.post('/api/notes', (req, res) => {
         }
     })
 });
-
-// // GET Route for note api with id
-// app.get('/api/notes/:id', (req, res) =>
-//     fs.readFile('./db/db.json', (err, data) => {
-//         res.json(JSON.parse(data));
-//     })
-// );
 
 // GET Route for wildcard calls
 app.get('*', (req, res) =>

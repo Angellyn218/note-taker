@@ -52,11 +52,7 @@ To see a saved note, click on it. This will cause it to reappear on the right si
 
 ![Home screen of notetaker app](assets/images/saved-note.png)
 
-From this screen, you can edit the note and press the saved button to update it.
-
-![Home screen of notetaker app](assets/images/different-title.png)
-
-If you want to work with a new note instead, press the + in the top right corner. This will clear the screen giving you a new note to work with.
+If you want to work with a new note, press the + in the top right corner. This will clear the screen giving you a new note to work with.
 
 If you are using the local port and want to stop the program from running, press 'control + c'. This will quit the program in your terminal and the port will stop listening.
 

@@ -30,27 +30,30 @@ app.get('/api/notes', (req, res) =>
 // POST Route for notes api
 app.post('/api/notes', (req, res) => {
     const {title, text} = req.body;
-    if (title && text) {
-        const newNote = {
-            title, 
-            text
-        };
 
-        fs.readFile('./db/db.json', (err, data) => {
-            if (err) {
-                console.error(err);
-            } else {
-                const parsedData = JSON.parse(data);
-                parsedData.push(newNote);
-                fs.writeFile('./db/db.json', JSON.stringify(parsedData, null, 4), (err) => {
-                    if (err) {
-                        console.error(err);
-                    }
-                });
-            }
-        })
-    }
+    const newNote = {
+        title, 
+        text
+    };
+
+    fs.readFile('./db/db.json', (err, data) => {
+        if (err) {
+            console.error(err);
+        } else {
+            const parsedData = JSON.parse(data);
+            parsedData.push(newNote);
+            fs.writeFile('./db/db.json', JSON.stringify(parsedData, null, 4), (err) => {
+                if (err) {
+                    console.error(err);
+                } else {
+                    res.json(parsedData);
+                }
+            });
+        }
+    })
 });
+
+// GET 
 
 // GET Route for wildcard calls
 app.get('*', (req, res) =>

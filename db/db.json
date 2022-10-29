@@ -4,15 +4,23 @@
         "text": "Test text"
     },
     {
+        "title": "note",
+        "text": "yay"
+    },
+    {
         "title": "new note",
-        "text": "note"
+        "text": "save"
     },
     {
-        "title": "add note",
-        "text": "note"
+        "title": "save",
+        "text": "yeah"
     },
     {
-        "title": "Great note",
-        "text": "note"
+        "title": "Note",
+        "text": "node"
+    },
+    {
+        "title": "Add note",
+        "text": "added note"
     }
 ]

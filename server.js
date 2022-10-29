@@ -53,7 +53,12 @@ app.post('/api/notes', (req, res) => {
     })
 });
 
-// GET 
+// // GET Route for note api with id
+// app.get('/api/notes/:id', (req, res) =>
+//     fs.readFile('./db/db.json', (err, data) => {
+//         res.json(JSON.parse(data));
+//     })
+// );
 
 // GET Route for wildcard calls
 app.get('*', (req, res) =>
